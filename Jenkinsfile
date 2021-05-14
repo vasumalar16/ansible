@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('git') {
             steps {
-               echo "I am inside dev branch" 
+               git branch: 'dev', changelog: false, credentialsId: 'git_credentials', poll: false, url: 'https://github.com/vasumalar16/ansible' 
             }
         }
     }
